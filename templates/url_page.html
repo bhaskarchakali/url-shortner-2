@@ -1,0 +1,55 @@
+{% extends "home.html" %}
+{% block title %}URL Shortener{% endblock %}
+
+{% block content %}
+<h1>URL Shortener</h1> 
+<left>
+    <hr>
+    <br>
+    <form action="/" , method="post">
+        <h3><label for="url_link"><strong>Please enter your URL</strong></label></h3>
+
+        
+       
+        <input type="url" name="url_link" id="url_link" placeholder="https://domain.com" style="height: 30px; width: 300px;" class="input-url">
+
+
+        
+      
+        
+        <input type="submit" value="Short URL" class="btn btn-primary">
+    </form>
+    <br>
+    {% if short_url_display %}
+    <hr>
+    
+    <!-- Display the short URL in blue -->
+    <h4 style="color: blue;">http://127.0.0.1:5000/{{short_url_display}}</h4>
+
+<!-- Create a copy button for the URL -->
+
+<button type="button" onclick="copyToClipboard('http://127.0.0.1:5000/{{short_url_display}}')" class="btn btn-primary font-weight-bold">Copy shorten URL</button>
+
+
+
+<!-- Include the copyToClipboard function -->
+<script>
+function copyToClipboard(text) {
+  var input = document.createElement('textarea');
+  input.value = text;
+  document.body.appendChild(input);
+  input.select();
+  document.execCommand('copy');
+  document.body.removeChild(input);
+  alert('URL copied to clipboard');
+}
+  
+
+</script>
+
+
+    
+
+    {% endif %}
+</center>
+{% endblock %}

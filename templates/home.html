@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <style>
+      body {
+        background-color: rgb(243, 239, 21);
+      }
+    </style>
+
+  </head>
+
+<head>
+	<title>URL Shortner</title>
+	<style>
+		h1 {
+			background-color:rgb(243, 239, 21); /* replace with your desired color code */
+			color: rgb(18, 18, 19); /* replace with your desired text color */
+			padding: 10px; /* add padding to the top and bottom of the title */
+			text-align: center; /* center the text */
+		}
+	</style>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div style="background-color:rgb(243, 239, 21);">
+                <div class="container-fluid">
+                
+                <style>
+                    a.navbar-brand strong {
+                      color: blue;
+                    }
+                  </style>
+                <a class="navbar-brand" href="/"><strong>Home</strong></a>
+
+                
+
+                
+            
+                    
+                
+            <a class="navbar-brand" aria-current="page" href="/history"><strong>History</strong></a>
+  
+                   
+                </div>
+            </div>
+        </nav>
+        <hr>
+        <br>
+        {% block content%}
+        {% endblock %}
+    </div>
+    </div>
+</body>
+
+</html>
