@@ -41,6 +41,18 @@ def shorten_url():
             return rand_char
 
 # 6. Create end points
+@app.route('/shorten_url', methods=['POST'])
+def shorten_url():
+    original_url = request.form['url']
+    url = URL(original_url=original_url, short_url='')
+    db.session.add(url)
+    db.session.commit()
+    # Replace localhost:5000 with your custom domain name or public IP address
+    short_url = f'http://<your-domain-name-or-public-IP-address>/{url.id}'
+    url.short_url = short_url
+    db.session.commit()
+    return redirect(url_for('home'))
+
 @app.route('/', methods=['POST', 'GET'])
 def home():
     if request.method == "POST":
